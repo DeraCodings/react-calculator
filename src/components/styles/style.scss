@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+
+
+$bg-color: #626a7a;
+$button--color: #232346;
+
+.App{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Mono', monospace;
+
+    .calculator{
+        width: 18rem;
+
+        .display{
+            word-wrap: break-word;
+            color: #f8f9fa;
+            background-color: darken($color: #212529, $amount: 5);
+            padding: .3rem;
+            text-align: right;
+            font-size: 1.5rem;
+            min-height: 1rem;
+        }
+
+        .display:nth-child(1){
+            color: #ffc107;
+        }
+
+        .buttons{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+
+            .button:nth-child(1){
+                grid-column: span 2;
+                background-color: #dc3545;
+            }
+
+            .button:nth-child(16){
+                grid-column: span 2;
+            }
+
+            .button:nth-child(15){
+                grid-row: span 2;
+                background-color: #0d6efd;
+            }
+
+            .button:nth-child(2),
+            .button:nth-child(3),
+            .button:nth-child(7),
+            .button:nth-child(11){
+                background-color: #6c757d;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:900px){
+    .App{
+
+        .calculator{
+            width: 25rem;
+        }
+    }
+}
